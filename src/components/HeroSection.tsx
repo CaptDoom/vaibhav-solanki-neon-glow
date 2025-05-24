@@ -22,74 +22,124 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative">
-      {/* Animated background particles */}
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Enhanced Animated background with multiple color layers */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(50)].map((_, i) => (
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black to-red-900/30"></div>
+        
+        {/* Floating particles with multiple colors */}
+        {[...Array(60)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-purple-500 rounded-full floating"
+            className={`absolute w-2 h-2 rounded-full floating ${
+              i % 4 === 0 ? 'bg-purple-500' : 
+              i % 4 === 1 ? 'bg-red-500' : 
+              i % 4 === 2 ? 'bg-pink-500' : 'bg-blue-500'
+            }`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 4}s`
+              animationDuration: `${3 + Math.random() * 4}s`,
+              filter: 'blur(0.5px)',
+              boxShadow: '0 0 10px currentColor'
+            }}
+          />
+        ))}
+
+        {/* Moving geometric shapes */}
+        {[...Array(8)].map((_, i) => (
+          <div
+            key={`shape-${i}`}
+            className={`absolute border-2 ${
+              i % 3 === 0 ? 'border-purple-500/30' : 
+              i % 3 === 1 ? 'border-red-500/30' : 'border-pink-500/30'
+            } rotate-45`}
+            style={{
+              left: `${Math.random() * 90}%`,
+              top: `${Math.random() * 90}%`,
+              width: `${20 + Math.random() * 40}px`,
+              height: `${20 + Math.random() * 40}px`,
+              animation: `floating ${5 + Math.random() * 5}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 2}s`
+            }}
+          />
+        ))}
+
+        {/* Glowing orbs */}
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={`orb-${i}`}
+            className={`absolute rounded-full ${
+              i % 2 === 0 ? 'bg-purple-500/20' : 'bg-red-500/20'
+            } blur-xl`}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${100 + Math.random() * 200}px`,
+              height: `${100 + Math.random() * 200}px`,
+              animation: `floating ${8 + Math.random() * 4}s ease-in-out infinite`,
+              animationDelay: `${Math.random() * 3}s`
             }}
           />
         ))}
       </div>
 
-      <div className="text-center z-10 max-w-6xl mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12 mb-8">
-          {/* Personal Image Placeholder */}
-          <div className="flex-shrink-0">
-            <div className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-500/20 to-red-500/20 border-4 border-purple-500/50 flex items-center justify-center neon-glow">
-              <div className="w-72 h-72 rounded-full bg-gray-800/50 backdrop-blur-sm flex items-center justify-center">
-                <span className="text-6xl text-purple-400">VS</span>
+      <div className="text-center z-10 max-w-7xl mx-auto px-4">
+        {/* Main Content - Centered Layout */}
+        <div className="flex flex-col items-center mb-12">
+          {/* Personal Image */}
+          <div className="mb-8">
+            <div className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-500/30 to-red-500/30 border-4 border-purple-500/50 flex items-center justify-center neon-glow relative">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-500/20 to-blue-500/20 animate-pulse"></div>
+              <div className="w-72 h-72 rounded-full bg-gray-800/60 backdrop-blur-sm flex items-center justify-center relative z-10 border-2 border-red-500/30">
+                <span className="text-6xl text-purple-400 font-bold glow-text">VS</span>
               </div>
             </div>
           </div>
 
-          {/* Hero Content */}
-          <div className="flex-1 text-left lg:text-left">
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 glow-text">
+          {/* Name and Title - Centered */}
+          <div className="text-center mb-8">
+            <h1 className="text-6xl lg:text-8xl font-bold mb-6 glow-text bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
               Vaibhav Solanki
             </h1>
             
-            <div className="h-16 mb-6">
-              <p className="text-xl lg:text-2xl text-purple-300 font-mono">
+            <div className="h-20 mb-6">
+              <p className="text-2xl lg:text-3xl text-purple-300 font-mono">
                 {text}
-                <span className="animate-pulse">|</span>
+                <span className="animate-pulse text-red-400">|</span>
               </p>
             </div>
 
-            <div className="mb-8">
-              <p className="text-lg text-gray-300 leading-relaxed mb-4">
+            <div className="mb-8 max-w-4xl mx-auto">
+              <p className="text-xl text-gray-300 leading-relaxed mb-6">
                 Second-year Computer Science Engineering student at UPES Dehradun, 
                 specializing in AI & Machine Learning. Passionate about creating 
                 innovative solutions that bridge technology and real-world challenges.
               </p>
               
-              <div className="flex flex-wrap gap-4 text-sm text-purple-300">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
+              <div className="flex flex-wrap justify-center gap-6 text-lg text-purple-300">
+                <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+                  <MapPin className="w-5 h-5 text-red-400" />
                   <span>Dehradun, India</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
+                <div className="flex items-center gap-2 glass-card px-4 py-2 rounded-full">
+                  <Calendar className="w-5 h-5 text-red-400" />
                   <span>Available for Internships</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 neon-glow">
-                <Download className="w-5 h-5 mr-2" />
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <Button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-10 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 neon-glow text-lg">
+                <Download className="w-6 h-6 mr-3" />
                 Download Resume
               </Button>
               <Button 
                 variant="outline" 
-                className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                className="border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-10 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 bg-transparent text-lg"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Let's Connect
@@ -99,26 +149,26 @@ const HeroSection = () => {
         </div>
 
         {/* Contact Information Cards */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-sm max-w-4xl mx-auto">
-          <div className="glass-card p-4 rounded-lg hover:neon-glow transition-all duration-300 group">
-            <Mail className="w-6 h-6 mx-auto mb-2 text-purple-400 group-hover:scale-110 transition-transform" />
-            <p className="text-gray-300 font-medium">Email</p>
-            <p className="text-xs text-gray-400">vaibhavx15k5@gmail.com</p>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-sm max-w-5xl mx-auto">
+          <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20">
+            <Mail className="w-8 h-8 mx-auto mb-3 text-purple-400 group-hover:scale-110 transition-transform" />
+            <p className="text-gray-300 font-medium text-base mb-1">Email</p>
+            <p className="text-sm text-gray-400">vaibhavx15k5@gmail.com</p>
           </div>
-          <div className="glass-card p-4 rounded-lg hover:neon-glow transition-all duration-300 group">
-            <Phone className="w-6 h-6 mx-auto mb-2 text-purple-400 group-hover:scale-110 transition-transform" />
-            <p className="text-gray-300 font-medium">Phone</p>
-            <p className="text-xs text-gray-400">+91 9971378282</p>
+          <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20">
+            <Phone className="w-8 h-8 mx-auto mb-3 text-purple-400 group-hover:scale-110 transition-transform" />
+            <p className="text-gray-300 font-medium text-base mb-1">Phone</p>
+            <p className="text-sm text-gray-400">+91 9971378282</p>
           </div>
-          <div className="glass-card p-4 rounded-lg hover:neon-glow transition-all duration-300 group">
-            <Github className="w-6 h-6 mx-auto mb-2 text-purple-400 group-hover:scale-110 transition-transform" />
-            <p className="text-gray-300 font-medium">GitHub</p>
-            <p className="text-xs text-gray-400">captdoom</p>
+          <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20">
+            <Github className="w-8 h-8 mx-auto mb-3 text-purple-400 group-hover:scale-110 transition-transform" />
+            <p className="text-gray-300 font-medium text-base mb-1">GitHub</p>
+            <p className="text-sm text-gray-400">captdoom</p>
           </div>
-          <div className="glass-card p-4 rounded-lg hover:neon-glow transition-all duration-300 group">
-            <Linkedin className="w-6 h-6 mx-auto mb-2 text-purple-400 group-hover:scale-110 transition-transform" />
-            <p className="text-gray-300 font-medium">LinkedIn</p>
-            <p className="text-xs text-gray-400">vaibhav-solanki</p>
+          <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20">
+            <Linkedin className="w-8 h-8 mx-auto mb-3 text-purple-400 group-hover:scale-110 transition-transform" />
+            <p className="text-gray-300 font-medium text-base mb-1">LinkedIn</p>
+            <p className="text-sm text-gray-400">vaibhav-solanki</p>
           </div>
         </div>
       </div>
