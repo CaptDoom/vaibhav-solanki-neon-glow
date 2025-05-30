@@ -6,36 +6,36 @@ const SkillsSection = () => {
 
   const skills = {
     "Languages": [
-      { name: "Python", level: 90 },
-      { name: "JavaScript", level: 85 },
-      { name: "Java", level: 80 },
-      { name: "C", level: 75 },
-      { name: "SQL", level: 85 },
-      { name: "Bash", level: 70 }
+      { name: "Python", level: 85 },
+      { name: "JavaScript", level: 80 },
+      { name: "Java", level: 75 },
+      { name: "C", level: 70 },
+      { name: "SQL", level: 80 },
+      { name: "Bash", level: 65 }
     ],
     "Frameworks & Technologies": [
-      { name: "React", level: 85 },
-      { name: "Flask", level: 80 },
-      { name: "Express.js", level: 85 },
-      { name: "TensorFlow", level: 75 },
-      { name: "NumPy", level: 90 },
-      { name: "Pandas", level: 90 }
+      { name: "React", level: 80 },
+      { name: "Flask", level: 75 },
+      { name: "Express.js", level: 80 },
+      { name: "TensorFlow", level: 70 },
+      { name: "NumPy", level: 85 },
+      { name: "Pandas", level: 85 }
     ],
     "Tools & Platforms": [
-      { name: "VSCode", level: 95 },
-      { name: "Jupyter", level: 90 },
-      { name: "Google Colab", level: 85 },
-      { name: "Anaconda", level: 80 },
-      { name: "Oracle APEX", level: 70 },
-      { name: "Matplotlib", level: 85 }
+      { name: "VSCode", level: 90 },
+      { name: "Jupyter", level: 85 },
+      { name: "Google Colab", level: 80 },
+      { name: "Anaconda", level: 75 },
+      { name: "Oracle APEX", level: 65 },
+      { name: "Matplotlib", level: 80 }
     ],
     "AI/ML": [
-      { name: "OpenAI Playground", level: 80 },
-      { name: "GitHub Copilot", level: 85 },
-      { name: "Machine Learning", level: 80 },
-      { name: "Deep Learning", level: 75 },
-      { name: "GANs", level: 70 },
-      { name: "Computer Vision", level: 75 }
+      { name: "OpenAI Playground", level: 75 },
+      { name: "GitHub Copilot", level: 80 },
+      { name: "Machine Learning", level: 75 },
+      { name: "Deep Learning", level: 70 },
+      { name: "GANs", level: 65 },
+      { name: "Computer Vision", level: 70 }
     ]
   };
 

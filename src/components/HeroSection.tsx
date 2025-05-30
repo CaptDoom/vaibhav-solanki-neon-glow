@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Phone, Download, MapPin, Calendar } from 'lucide-react';
@@ -20,6 +19,16 @@ const HeroSection = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  const handleDownloadResume = () => {
+    // Create a temporary link element to trigger download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // You'll need to add your resume.pdf to the public folder
+    link.download = 'Vaibhav_Solanki_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -118,7 +127,7 @@ const HeroSection = () => {
 
             <div className="mb-8 max-w-4xl mx-auto">
               <p className="text-xl text-gray-300 leading-relaxed mb-6">
-                Second-year Computer Science Engineering student at UPES Dehradun, 
+                Prefinal-year Computer Science Engineering student at UPES Dehradun, 
                 specializing in AI & Machine Learning. Passionate about creating 
                 innovative solutions that bridge technology and real-world challenges.
               </p>
@@ -137,7 +146,10 @@ const HeroSection = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-10 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 neon-glow text-lg">
+              <Button 
+                onClick={handleDownloadResume}
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-10 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 neon-glow text-lg"
+              >
                 <Download className="w-6 h-6 mr-3" />
                 Download Resume
               </Button>
@@ -154,26 +166,42 @@ const HeroSection = () => {
 
         {/* Contact Information Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-sm max-w-5xl mx-auto">
-          <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20">
+          <a 
+            href="mailto:vaibhavx15k5@gmail.com"
+            className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20 block"
+          >
             <Mail className="w-8 h-8 mx-auto mb-3 text-purple-400 group-hover:scale-110 transition-transform" />
             <p className="text-gray-300 font-medium text-base mb-1">Email</p>
             <p className="text-sm text-gray-400">vaibhavx15k5@gmail.com</p>
-          </div>
-          <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20">
+          </a>
+          <a 
+            href="tel:+919971378282"
+            className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20 block"
+          >
             <Phone className="w-8 h-8 mx-auto mb-3 text-purple-400 group-hover:scale-110 transition-transform" />
             <p className="text-gray-300 font-medium text-base mb-1">Phone</p>
             <p className="text-sm text-gray-400">+91 9971378282</p>
-          </div>
-          <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20">
+          </a>
+          <a 
+            href="https://github.com/captdoom"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20 block"
+          >
             <Github className="w-8 h-8 mx-auto mb-3 text-purple-400 group-hover:scale-110 transition-transform" />
             <p className="text-gray-300 font-medium text-base mb-1">GitHub</p>
             <p className="text-sm text-gray-400">captdoom</p>
-          </div>
-          <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20">
+          </a>
+          <a 
+            href="https://linkedin.com/in/vaibhav-solanki-250498270"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 group border border-purple-500/20 block"
+          >
             <Linkedin className="w-8 h-8 mx-auto mb-3 text-purple-400 group-hover:scale-110 transition-transform" />
             <p className="text-gray-300 font-medium text-base mb-1">LinkedIn</p>
             <p className="text-sm text-gray-400">vaibhav-solanki</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>

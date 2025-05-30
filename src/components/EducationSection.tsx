@@ -8,7 +8,7 @@ const EducationSection = () => {
       institution: "UPES Dehradun",
       degree: "BTech CSE (AI/ML)",
       grade: "Current CGPA: 8.2",
-      status: "current"
+      status: "prefinal"
     },
     {
       year: "2021–2023",
@@ -41,12 +41,12 @@ const EducationSection = () => {
         <div className="space-y-6">
           {education.map((edu, index) => (
             <div key={index} className={`glass-card p-6 rounded-xl transition-all duration-300 hover:neon-glow ${
-              edu.status === 'current' ? 'border border-red-500' : 'hover:scale-105'
+              edu.status === 'prefinal' ? 'border border-red-500' : 'hover:scale-105'
             }`}>
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-4">
                   <div className={`p-3 rounded-full ${
-                    edu.status === 'current' ? 'bg-red-500/20 text-red-400' : 'bg-purple-500/20 text-purple-400'
+                    edu.status === 'prefinal' ? 'bg-red-500/20 text-red-400' : 'bg-purple-500/20 text-purple-400'
                   }`}>
                     <GraduationCap className="w-6 h-6" />
                   </div>
@@ -54,9 +54,9 @@ const EducationSection = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <h3 className="text-xl font-semibold text-white">{edu.institution}</h3>
-                      {edu.status === 'current' && (
+                      {edu.status === 'prefinal' && (
                         <span className="px-2 py-1 bg-red-600 text-white text-xs rounded-full">
-                          Current
+                          Prefinal Year
                         </span>
                       )}
                     </div>

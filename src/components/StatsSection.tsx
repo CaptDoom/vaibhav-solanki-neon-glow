@@ -6,7 +6,7 @@ const StatsSection = () => {
   const stats = [
     {
       icon: Code,
-      value: 15,
+      value: 20,
       suffix: '+',
       label: 'Projects Completed',
       description: 'Full-stack and ML projects'

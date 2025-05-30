@@ -8,7 +8,8 @@ const ProjectsSection = () => {
       title: "Academic Scheduling Application",
       description: "A comprehensive full-stack web application designed for academic timetable management. Features include intuitive viewing interfaces, seamless PDF download functionality, and robust editing capabilities. The system supports multiple viewing modes including teacher-specific, classroom-based, and batch-wise scheduling, making it a complete solution for educational institutions.",
       tech: ["Express.js", "Node.js", "MongoDB", "JavaScript", "PDF Generation"],
-      github: "TimeTable.js",
+      github: "https://github.com/captdoom/TimeTable.js",
+      demo: "#",
       features: ["Dynamic timetable generation", "Multi-format download options", "Real-time editing capabilities", "Role-based access control"],
       category: "Full-Stack Development"
     },
@@ -16,7 +17,8 @@ const ProjectsSection = () => {
       title: "Property Prediction Model",
       description: "An advanced machine learning solution for real estate price prediction utilizing sophisticated feature engineering techniques. The project includes comprehensive data preprocessing, model training with multiple algorithms, and an interactive dashboard for data visualization and model performance insights. Incorporates market trends analysis and location-based pricing factors.",
       tech: ["Python", "Pandas", "Matplotlib", "Scikit-learn", "Jupyter", "Seaborn"],
-      github: "ML-PredictionModel",
+      github: "https://github.com/captdoom/ML-PredictionModel",
+      demo: "#",
       features: ["Advanced feature engineering", "Multiple ML algorithms", "Interactive visualization dashboard", "Market trend analysis"],
       category: "Machine Learning"
     },
@@ -24,7 +26,8 @@ const ProjectsSection = () => {
       title: "Spurvo Platform",
       description: "A scalable SaaS platform engineered for comprehensive feedback management and product roadmap visualization. Built with modern web technologies to ensure optimal performance and user experience. The platform includes advanced announcement tools, user engagement features, and analytics dashboard for tracking product development progress.",
       tech: ["HTML5", "CSS3", "Bootstrap", "Node.js", "Airtable", "REST APIs"],
-      github: "spurvo-platform",
+      github: "https://github.com/captdoom/spurvo-platform",
+      demo: "#",
       features: ["Comprehensive feedback boards", "Visual roadmap management", "Advanced announcement system", "Analytics dashboard"],
       category: "SaaS Platform"
     },
@@ -32,7 +35,8 @@ const ProjectsSection = () => {
       title: "FashionGAN",
       description: "Cutting-edge AI project leveraging StyleGAN2 architecture for generating high-quality, realistic fashion designs. This deep learning application demonstrates advanced generative modeling techniques, incorporating state-of-the-art neural networks for creative fashion synthesis. The project showcases expertise in modern AI frameworks and GPU-accelerated computing.",
       tech: ["GANs", "PyTorch", "TensorFlow", "NumPy", "Matplotlib", "NVIDIA CUDA", "StyleGAN2"],
-      github: "fashion-gan",
+      github: "https://github.com/captdoom/fashion-gan",
+      demo: "#",
       features: ["StyleGAN2 implementation", "High-resolution image generation", "GPU acceleration optimization", "Creative design synthesis"],
       category: "Artificial Intelligence"
     }
@@ -74,12 +78,22 @@ const ProjectsSection = () => {
                   </h3>
                 </div>
                 <div className="flex gap-2">
-                  <Button size="sm" variant="ghost" className="p-2 hover:bg-purple-500/20">
+                  <a 
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 hover:bg-purple-500/20 rounded-lg transition-colors"
+                  >
                     <Github className="w-5 h-5 text-purple-400" />
-                  </Button>
-                  <Button size="sm" variant="ghost" className="p-2 hover:bg-purple-500/20">
+                  </a>
+                  <a 
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 hover:bg-purple-500/20 rounded-lg transition-colors"
+                  >
                     <ExternalLink className="w-5 h-5 text-purple-400" />
-                  </Button>
+                  </a>
                 </div>
               </div>
 
@@ -127,10 +141,16 @@ const ProjectsSection = () => {
               Visit my GitHub profile to discover additional projects, contributions, and experimental work.
             </p>
           </div>
-          <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 neon-glow">
-            <Github className="w-5 h-5 mr-2" />
-            View All Projects on GitHub
-          </Button>
+          <a 
+            href="https://github.com/captdoom"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 neon-glow">
+              <Github className="w-5 h-5 mr-2" />
+              View All Projects on GitHub
+            </Button>
+          </a>
         </div>
       </div>
     </section>

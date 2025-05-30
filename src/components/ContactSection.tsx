@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Send, Github, Linkedin } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, BookOpen } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
@@ -94,7 +94,10 @@ const ContactSection = () => {
           
           {/* Contact Info */}
           <div className="space-y-8">
-            <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300">
+            <a 
+              href="mailto:vaibhavx15k5@gmail.com"
+              className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 block"
+            >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-purple-500/20 rounded-full">
                   <Mail className="w-6 h-6 text-purple-400" />
@@ -104,9 +107,14 @@ const ContactSection = () => {
                   <p className="text-gray-300">vaibhavx15k5@gmail.com</p>
                 </div>
               </div>
-            </div>
+            </a>
             
-            <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300">
+            <a 
+              href="https://github.com/captdoom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 block"
+            >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-purple-500/20 rounded-full">
                   <Github className="w-6 h-6 text-purple-400" />
@@ -116,9 +124,14 @@ const ContactSection = () => {
                   <p className="text-gray-300">github.com/captdoom</p>
                 </div>
               </div>
-            </div>
+            </a>
             
-            <div className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300">
+            <a 
+              href="https://linkedin.com/in/vaibhav-solanki-250498270"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 block"
+            >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-purple-500/20 rounded-full">
                   <Linkedin className="w-6 h-6 text-purple-400" />
@@ -128,17 +141,55 @@ const ContactSection = () => {
                   <p className="text-gray-300">linkedin.com/in/vaibhav-solanki-250498270</p>
                 </div>
               </div>
-            </div>
+            </a>
+
+            <a 
+              href="https://www.researchgate.net/profile/Vaibhav-Solanki-5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 block"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 bg-purple-500/20 rounded-full">
+                  <BookOpen className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-white">ResearchGate</h4>
+                  <p className="text-gray-300">Research Publications & Papers</p>
+                </div>
+              </div>
+            </a>
             
             <div className="text-center">
               <p className="text-gray-400 mb-4">Let's connect and build something incredible!</p>
               <div className="flex justify-center gap-4">
-                <Button size="sm" variant="ghost" className="p-3 hover:bg-purple-500/20">
-                  <Github className="w-5 h-5 text-purple-400" />
-                </Button>
-                <Button size="sm" variant="ghost" className="p-3 hover:bg-purple-500/20">
-                  <Linkedin className="w-5 h-5 text-purple-400" />
-                </Button>
+                <a 
+                  href="https://github.com/captdoom"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="sm" variant="ghost" className="p-3 hover:bg-purple-500/20">
+                    <Github className="w-5 h-5 text-purple-400" />
+                  </Button>
+                </a>
+                <a 
+                  href="https://linkedin.com/in/vaibhav-solanki-250498270"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="sm" variant="ghost" className="p-3 hover:bg-purple-500/20">
+                    <Linkedin className="w-5 h-5 text-purple-400" />
+                  </Button>
+                </a>
+                <a 
+                  href="https://www.researchgate.net/profile/Vaibhav-Solanki-5"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="sm" variant="ghost" className="p-3 hover:bg-purple-500/20">
+                    <BookOpen className="w-5 h-5 text-purple-400" />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
