@@ -9,7 +9,7 @@ const ExperienceSection = () => {
       location: "Remote/Bangalore",
       date: "2025",
       description: "Working with fullstack technologies, integrations, deployment, and marketing",
-      type: "current"
+      type: "completed"
     },
     {
       title: "Spurvo",
@@ -17,7 +17,7 @@ const ExperienceSection = () => {
       location: "Remote",
       date: "2025",
       description: "Frontend development intern for SaaS Startup",
-      type: "current"
+      type: "completed"
     },
     {
       title: "Google Open Source",
@@ -58,9 +58,7 @@ const ExperienceSection = () => {
             {experiences.map((exp, index) => (
               <div key={index} className="relative flex items-start group">
                 {/* Timeline dot */}
-                <div className={`absolute left-6 w-4 h-4 rounded-full border-2 ${
-                  exp.type === 'current' ? 'bg-red-500 border-red-300' : 'bg-purple-500 border-purple-300'
-                } group-hover:scale-125 transition-transform duration-300`}></div>
+                <div className="absolute left-6 w-4 h-4 rounded-full border-2 bg-purple-500 border-purple-300 group-hover:scale-125 transition-transform duration-300"></div>
                 
                 {/* Content card */}
                 <div className="ml-16 glass-card p-6 rounded-xl hover:neon-glow transition-all duration-300 hover:scale-105 w-full">
@@ -81,11 +79,6 @@ const ExperienceSection = () => {
                     </div>
                   </div>
                   <p className="text-gray-300">{exp.description}</p>
-                  {exp.type === 'current' && (
-                    <span className="inline-block mt-2 px-3 py-1 bg-red-600 text-white text-xs rounded-full">
-                      Current
-                    </span>
-                  )}
                 </div>
               </div>
             ))}

@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Phone, Download, MapPin, Calendar } from 'lucide-react';
@@ -96,22 +97,8 @@ const HeroSection = () => {
       </div>
 
       <div className="text-center z-10 max-w-7xl mx-auto px-4">
-        {/* Main Content - Centered Layout */}
+        {/* Main Content - Centered Layout without professional image */}
         <div className="flex flex-col items-center mb-12">
-          {/* Personal Image */}
-          <div className="mb-8">
-            <div className="w-80 h-80 rounded-full bg-gradient-to-br from-purple-500/30 to-red-500/30 border-4 border-purple-500/50 flex items-center justify-center neon-glow relative overflow-hidden">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-500/20 to-blue-500/20 animate-pulse"></div>
-              <div className="w-72 h-72 rounded-full bg-gray-800/60 backdrop-blur-sm flex items-center justify-center relative z-10 border-2 border-red-500/30 overflow-hidden">
-                <img 
-                  src="/lovable-uploads/4d4b5ed5-1ae8-4220-bad0-37b20b4b5af1.png" 
-                  alt="Vaibhav Solanki" 
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-            </div>
-          </div>
-
           {/* Name and Title - Centered */}
           <div className="text-center mb-8">
             <h1 className="text-6xl lg:text-8xl font-bold mb-6 glow-text bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">

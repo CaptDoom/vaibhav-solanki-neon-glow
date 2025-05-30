@@ -1,5 +1,5 @@
 
-import { Github, ExternalLink, Image } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const ProjectsSection = () => {
@@ -11,7 +11,8 @@ const ProjectsSection = () => {
       github: "https://github.com/captdoom/TimeTable.js",
       demo: "#",
       features: ["Dynamic timetable generation", "Multi-format download options", "Real-time editing capabilities", "Role-based access control"],
-      category: "Full-Stack Development"
+      category: "Full-Stack Development",
+      matrixContent: "010011010111011100101110010111000101110110101011101101001010101110110111"
     },
     {
       title: "Property Prediction Model",
@@ -20,7 +21,8 @@ const ProjectsSection = () => {
       github: "https://github.com/captdoom/ML-PredictionModel",
       demo: "#",
       features: ["Advanced feature engineering", "Multiple ML algorithms", "Interactive visualization dashboard", "Market trend analysis"],
-      category: "Machine Learning"
+      category: "Machine Learning",
+      matrixContent: "110010110101100111001011010111000101101110010110111010101101010110111"
     },
     {
       title: "Spurvo Platform",
@@ -29,7 +31,8 @@ const ProjectsSection = () => {
       github: "https://github.com/captdoom/spurvo-platform",
       demo: "#",
       features: ["Comprehensive feedback boards", "Visual roadmap management", "Advanced announcement system", "Analytics dashboard"],
-      category: "SaaS Platform"
+      category: "SaaS Platform",
+      matrixContent: "001110101010111010110101011101100111010101100110111010101011101011"
     },
     {
       title: "FashionGAN",
@@ -38,7 +41,8 @@ const ProjectsSection = () => {
       github: "https://github.com/captdoom/fashion-gan",
       demo: "#",
       features: ["StyleGAN2 implementation", "High-resolution image generation", "GPU acceleration optimization", "Creative design synthesis"],
-      category: "Artificial Intelligence"
+      category: "Artificial Intelligence",
+      matrixContent: "101101010110101101011010101010111010101011010110101011010110111010"
     }
   ];
 
@@ -58,12 +62,43 @@ const ProjectsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="glass-card p-8 rounded-xl hover:neon-glow transition-all duration-300 hover:scale-[1.02] group">
-              {/* Project Image Placeholder */}
-              <div className="w-full h-48 rounded-lg bg-gradient-to-br from-purple-500/20 to-red-500/20 border border-purple-500/30 flex items-center justify-center mb-6 group-hover:border-purple-400/50 transition-colors">
-                <div className="text-center">
-                  <Image className="w-12 h-12 text-purple-400 mx-auto mb-2" />
-                  <span className="text-purple-300 font-medium">{project.title}</span>
-                  <span className="block text-xs text-gray-400 mt-1">Project Screenshot</span>
+              {/* Matrix-style Project Image */}
+              <div className="w-full h-48 rounded-lg bg-black border border-green-500/30 flex items-center justify-center mb-6 group-hover:border-green-400/50 transition-colors relative overflow-hidden">
+                {/* Matrix background effect */}
+                <div className="absolute inset-0 opacity-30">
+                  <div className="grid grid-cols-12 gap-1 h-full text-green-400 text-xs font-mono overflow-hidden">
+                    {project.matrixContent.split('').map((char, i) => (
+                      <div 
+                        key={i} 
+                        className="flex items-center justify-center animate-pulse"
+                        style={{
+                          animationDelay: `${(i * 0.1) % 2}s`,
+                          animationDuration: `${1 + (i % 3)}s`
+                        }}
+                      >
+                        {char}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Project title overlay */}
+                <div className="relative z-10 text-center">
+                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-green-500/20 border-2 border-green-400 flex items-center justify-center">
+                    <span className="text-green-400 font-bold text-2xl">{project.title.charAt(0)}</span>
+                  </div>
+                  <span className="text-green-300 font-bold text-lg">{project.title}</span>
+                  <div className="text-xs text-green-400 mt-1 font-mono">
+                    [{project.category.toUpperCase()}]
+                  </div>
+                </div>
+                
+                {/* Animated green lines */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent animate-pulse"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent animate-pulse"></div>
+                  <div className="absolute left-0 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-green-400 to-transparent animate-pulse"></div>
+                  <div className="absolute right-0 top-0 w-0.5 h-full bg-gradient-to-b from-transparent via-green-400 to-transparent animate-pulse"></div>
                 </div>
               </div>
 
